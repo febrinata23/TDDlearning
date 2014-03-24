@@ -45,9 +45,9 @@ namespace TDDlearning
         }
     }
 
-    public class CovertIntegerToString
+    public class NumbersInWords
     {
-        public CovertIntegerToString() { }
+        public NumbersInWords() { }
         
         public string IntegerToString(int number)
         {

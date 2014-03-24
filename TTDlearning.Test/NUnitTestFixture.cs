@@ -11,20 +11,20 @@ namespace TTDlearning.Test
     public class NUnitTestFixture
     {
         TDDlearning.MathsOperation mathOperation = null;
-        TDDlearning.CovertIntegerToString convertIntegerToString = null;
+        TDDlearning.NumbersInWords numbersInWords = null;
 
         [SetUp]
         public void Init()
         {
             mathOperation = new TDDlearning.MathsOperation();
-            convertIntegerToString = new TDDlearning.CovertIntegerToString();
+            numbersInWords = new TDDlearning.NumbersInWords();
         }
 
         [TearDown]
         public void CleanUp()
         {
             mathOperation = null;
-            convertIntegerToString = null;
+            numbersInWords = null;
         }
 
         [TestCase]
@@ -50,56 +50,56 @@ namespace TTDlearning.Test
         [TestCase]
         public void ConvertZeroToString()
         {
-            string result = convertIntegerToString.IntegerToString(0);
+            string result = numbersInWords.IntegerToString(0);
             Assert.AreEqual("zero", result);
         }
 
         [TestCase]
         public void ConvertFiveToString()
         {
-            string result = convertIntegerToString.IntegerToString(5);
+            string result = numbersInWords.IntegerToString(5);
             Assert.AreEqual("five", result);
         }
 
         [TestCase]
         public void ConvertTenToString()
         {
-            string result = convertIntegerToString.IntegerToString(10);
+            string result = numbersInWords.IntegerToString(10);
             Assert.AreEqual("ten", result);
         }
 
         [TestCase]
         public void ConvertNineteenToString()
         {
-            string result = convertIntegerToString.IntegerToString(19);
+            string result = numbersInWords.IntegerToString(19);
             Assert.AreEqual("nineteen", result);
         }
 
         [TestCase]
         public void ConvertTwentyToString()
         {
-            string result = convertIntegerToString.IntegerToString(20);
+            string result = numbersInWords.IntegerToString(20);
             Assert.AreEqual("twenty", result);
         }
 
         [TestCase]
         public void ConvertTwentyfiveToString()
         {
-            string result = convertIntegerToString.IntegerToString(25);
+            string result = numbersInWords.IntegerToString(25);
             Assert.AreEqual("twenty five", result);
         }
 
         [TestCase]
         public void ConvertNegativTwentyfiveToString()
         {
-            string result = convertIntegerToString.IntegerToString(-25);
+            string result = numbersInWords.IntegerToString(-25);
             Assert.AreEqual("negative twenty five", result);
         }
 
         [TestCase]
         public void ConvertNegativeNinetyynineToString()
         {
-            string result = convertIntegerToString.IntegerToString(-99);
+            string result = numbersInWords.IntegerToString(-99);
             Assert.AreEqual("negative ninety nine", result);
         }
     }
