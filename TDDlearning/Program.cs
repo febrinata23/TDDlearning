@@ -16,11 +16,11 @@ namespace TDDlearning
             number1 = int.Parse(Console.ReadLine());
             number2 = int.Parse(Console.ReadLine());
 
-            MathsOperation testMathOperation = new MathsOperation();
-            int numberAdd = testMathOperation.Add(number1, number2);
+            MathsOperation mathOperation = new MathsOperation();
+            int numberAdd = mathOperation.Add(number1, number2);
             Console.WriteLine(numberAdd);
             Console.ReadKey();
-            int numberSubtract = testMathOperation.Subtract(number1, number2);
+            int numberSubtract = mathOperation.Subtract(number1, number2);
             Console.WriteLine(numberSubtract);
             Console.ReadKey();
         }
