@@ -29,20 +29,19 @@ namespace TDDlearning
     {
         public MathsOperation() { }
 
-        public int Subtract(int a, int b)
+        public int Subtract(int number1, int number2)
         {
-            int x = a - b;
-            return x;
+            return number1 - number2;
         }
 
-        public int Add(int a, int b) 
+        public int Add(int number1, int number2) 
         {
-            return a + b;
+            return number1 + number2;
         }
 
-        public int Devide(int a, int b)
+        public int Devide(int number1, int number2)
         {
-            return a / b;
+            return number1 / number2;
         }
     }
 
