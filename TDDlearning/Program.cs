@@ -11,28 +11,23 @@ namespace TDDlearning
         static void Main(string[] args)
         {
             Console.WriteLine("Enter two numbers\n");
-            int num1;
-            int num2;
-            num1 = int.Parse(Console.ReadLine());
-            num2 = int.Parse(Console.ReadLine());
+            int number1;
+            int number2;
+            number1 = int.Parse(Console.ReadLine());
+            number2 = int.Parse(Console.ReadLine());
 
-            Mathsx xx = new Mathsx();
-            int x = xx.Add(num1, num2);
+            MathsOperation xx = new MathsOperation();
+            int x = xx.Add(number1, number2);
             Console.WriteLine(x);
             Console.ReadKey();
-            int y = xx.Subtract(num1, num2);
+            int y = xx.Subtract(number1, number2);
             Console.WriteLine(y);
             Console.ReadKey();
         }
     }
-    public class Mathsx
+    public class MathsOperation
     {
-        public Mathsx() { }
-        public int Add(int a, int b)
-        {
-            int x = a + b;
-            return x;
-        }
+        public MathsOperation() { }
 
         public int Subtract(int a, int b)
         {
@@ -40,36 +35,37 @@ namespace TDDlearning
             return x;
         }
 
-        public int Adding(int a, int b) 
+        public int Add(int a, int b) 
         {
             return a + b;
         }
-        public int devide(int a, int b)
+
+        public int Devide(int a, int b)
         {
             return a / b;
         }
     }
 
-    public class covertinttostring
+    public class CovertIntegerToString
     {
-        public covertinttostring() { }
+        public CovertIntegerToString() { }
         
-        public string InttoEnglish(int num)
+        public string IntegerToString(int number)
         {
-            if (num == 0)
+            if (number == 0)
                 return "zero";
 
             string flag = "";
-            if (num < 0)
+            if (number < 0)
                 flag = "negative ";
             
-            return string.Concat(flag,numunderonehundred(Math.Abs(num)));
+            return string.Concat(flag,NumberUnderOneHundredToString(Math.Abs(number)));
 
         }
 
-        public string numundernineteen(int num)
+        public string NumberUnderNineteenToString(int number)
         {
-            switch (num)
+            switch (number)
             {
                 case 1:
                     return "one";
@@ -112,13 +108,13 @@ namespace TDDlearning
             }
         }
 
-        public string numunderonehundred(int num)
+        public string NumberUnderOneHundredToString(int number)
         {
-            if (num < 20)
-                return numundernineteen(num);
+            if (number < 20)
+                return NumberUnderNineteenToString(number);
 
-            int satuan = num % 10;
-            int puluhan = num / 10;
+            int satuan = number % 10;
+            int puluhan = number / 10;
             string result = "";
 
             switch (puluhan)
@@ -151,7 +147,7 @@ namespace TDDlearning
 
             if (satuan!=0)
             {
-                result = string.Concat(result, " ", numundernineteen(satuan));
+                result = string.Concat(result, " ", NumberUnderNineteenToString(satuan));
             }
 
             return result;
