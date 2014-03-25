@@ -13,12 +13,15 @@ namespace TTDlearning.Test
         TDDlearning.MathsOperation mathOperation = null;
         TDDlearning.NumbersInWords numbersInWords = null;
         TDDlearning.FibonacciSequence fibonacciSequence = null;
+        TDDlearning.PrimeSequence primeSequence = null;
+
         [SetUp]
         public void Init()
         {
             mathOperation = new TDDlearning.MathsOperation();
             numbersInWords = new TDDlearning.NumbersInWords();
             fibonacciSequence = new TDDlearning.FibonacciSequence();
+            primeSequence = new TDDlearning.PrimeSequence();
         }
 
         [TearDown]
@@ -27,6 +30,7 @@ namespace TTDlearning.Test
             mathOperation = null;
             numbersInWords = null;
             fibonacciSequence = null;
+            primeSequence = null;
         }
 
         [TestCase]
@@ -131,6 +135,41 @@ namespace TTDlearning.Test
         {
             string result = fibonacciSequence.DisplayFibonacciSequence(9);
             Assert.AreEqual("112358132134", result);
+        }
+
+        [TestCase]
+        public void TestDisplayPrimeSequenceOneNumber()
+        {
+            string result = primeSequence.DisplayPrimeSequence(1);
+            Assert.AreEqual("2", result);
+        }
+
+        [TestCase]
+        public void TestCheckingNumberFour()
+        {
+            bool result = primeSequence.CheckingNumber(4);
+            Assert.AreEqual(false, result);
+        }
+
+        [TestCase]
+        public void TestDisplayPrimeSequenceTwoNumber()
+        {
+            string result = primeSequence.DisplayPrimeSequence(2);
+            Assert.AreEqual("23", result);
+        }
+
+        [TestCase]
+        public void TestDisplayPrimeSequenceThreeNumber()
+        {
+            string result = primeSequence.DisplayPrimeSequence(3);
+            Assert.AreEqual("235", result);
+        }
+
+        [TestCase]
+        public void TestDisplayPrimeSequenceFiveNumber()
+        {
+            string result = primeSequence.DisplayPrimeSequence(5);
+            Assert.AreEqual("235711", result);
         }
     }
 }

@@ -186,4 +186,57 @@ namespace TDDlearning
             return number1 + number2;
         }
     }
+
+    public class PrimeSequence
+    {
+        private int _firstNumber;
+
+        public PrimeSequence()
+        {
+            _firstNumber = 2;
+        }
+
+        public string DisplayPrimeSequence(int number)
+        {
+            string result = "";
+
+            while (number > 0)
+            {
+                if (CheckingNumber(_firstNumber))
+                {
+                    result += _firstNumber.ToString();
+                    number--;
+                }
+                _firstNumber++;
+            }
+            return result;
+        }
+
+        public bool CheckingNumber(int number)
+        {
+            int numberClone = number;
+            int numberOfModulo = 0;
+            bool result = true;
+
+            while (numberClone > 1)
+            {
+                if ((number % numberClone) == 0)
+                {
+                    numberOfModulo++;
+                    numberClone--;
+                    if (numberOfModulo > 1)
+                    {
+                        result = false;
+                        return result;
+                    }
+                }
+                else
+                {
+                    numberClone--;
+                }
+            }
+
+            return result;
+        }
+    }
 }
