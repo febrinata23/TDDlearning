@@ -12,12 +12,13 @@ namespace TTDlearning.Test
     {
         TDDlearning.MathsOperation mathOperation = null;
         TDDlearning.NumbersInWords numbersInWords = null;
-
+        TDDlearning.FibonacciSequence fibonacciSequence = null;
         [SetUp]
         public void Init()
         {
             mathOperation = new TDDlearning.MathsOperation();
             numbersInWords = new TDDlearning.NumbersInWords();
+            fibonacciSequence = new TDDlearning.FibonacciSequence();
         }
 
         [TearDown]
@@ -25,6 +26,7 @@ namespace TTDlearning.Test
         {
             mathOperation = null;
             numbersInWords = null;
+            fibonacciSequence = null;
         }
 
         [TestCase]
@@ -101,6 +103,34 @@ namespace TTDlearning.Test
         {
             string result = numbersInWords.IntegerToString(-99);
             Assert.AreEqual("negative ninety nine", result);
+        }
+
+        [TestCase]
+        public void TestDisplayFibonacciSequenceOneNumber()
+        {
+            string result = fibonacciSequence.DisplayFibonacciSequence(1);
+            Assert.AreEqual("1", result);
+        }
+
+        [TestCase]
+        public void TestDisplayFibonacciSequenceTwoNumbers()
+        {
+            string result = fibonacciSequence.DisplayFibonacciSequence(2);
+            Assert.AreEqual("11", result);
+        }
+
+        [TestCase]
+        public void TestDisplayFibonacciSequencefourNumbers()
+        {
+            string result = fibonacciSequence.DisplayFibonacciSequence(4);
+            Assert.AreEqual("1123", result);
+        }
+
+        [TestCase]
+        public void TestDisplayFibonacciSequenceNineNumbers()
+        {
+            string result = fibonacciSequence.DisplayFibonacciSequence(9);
+            Assert.AreEqual("112358132134", result);
         }
     }
 }

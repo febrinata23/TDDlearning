@@ -34,7 +34,7 @@ namespace TDDlearning
             return number1 - number2;
         }
 
-        public int Add(int number1, int number2) 
+        public int Add(int number1, int number2)
         {
             return number1 + number2;
         }
@@ -48,7 +48,7 @@ namespace TDDlearning
     public class NumbersInWords
     {
         public NumbersInWords() { }
-        
+
         public string IntegerToString(int number)
         {
             if (number == 0)
@@ -57,8 +57,8 @@ namespace TDDlearning
             string flag = "";
             if (number < 0)
                 flag = "negative ";
-            
-            return string.Concat(flag,NumberUnderOneHundredToString(Math.Abs(number)));
+
+            return string.Concat(flag, NumberUnderOneHundredToString(Math.Abs(number)));
 
         }
 
@@ -144,12 +144,46 @@ namespace TDDlearning
                     break;
             }
 
-            if (satuan!=0)
+            if (satuan != 0)
             {
                 result = string.Concat(result, " ", NumberUnderNineteenToString(satuan));
             }
 
             return result;
+        }
+    }
+
+    public class FibonacciSequence
+    {
+        private int _firstNumber;
+        private int _secondNumber;
+        private int _thirdNumber;
+
+        public FibonacciSequence()
+        {
+            _firstNumber = 0;
+            _secondNumber = 1;
+            _thirdNumber = 0;
+        }
+
+        public string DisplayFibonacciSequence(int number)
+        {
+            string result = "";
+
+            for (int iteration = 0; iteration < number; iteration++)
+            {
+                result += _secondNumber.ToString();
+                _thirdNumber = GenerateFibonacciNumber(_firstNumber, _secondNumber);
+                _firstNumber = _secondNumber;
+                _secondNumber = _thirdNumber;
+            }
+
+            return result;
+        }
+
+        public int GenerateFibonacciNumber(int number1, int number2)
+        {
+            return number1 + number2;
         }
     }
 }
