@@ -155,15 +155,15 @@ namespace TDDlearning
 
     public class FibonacciSequence
     {
-        private int _firstNumber;
-        private int _secondNumber;
-        private int _thirdNumber;
+        private int firstNumber;
+        private int secondNumber;
+        private int thirdNumber;
 
         public FibonacciSequence()
         {
-            _firstNumber = 0;
-            _secondNumber = 1;
-            _thirdNumber = 0;
+            this.firstNumber = 0;
+            this.secondNumber = 1;
+            this.thirdNumber = 0;
         }
 
         public string DisplayFibonacciSequence(int number)
@@ -172,10 +172,10 @@ namespace TDDlearning
 
             for (int iteration = 0; iteration < number; iteration++)
             {
-                result += _secondNumber.ToString();
-                _thirdNumber = GenerateFibonacciNumber(_firstNumber, _secondNumber);
-                _firstNumber = _secondNumber;
-                _secondNumber = _thirdNumber;
+                result += secondNumber.ToString();
+                thirdNumber = GenerateFibonacciNumber(firstNumber, secondNumber);
+                firstNumber = secondNumber;
+                secondNumber = thirdNumber;
             }
 
             return result;
@@ -189,11 +189,11 @@ namespace TDDlearning
 
     public class PrimeSequence
     {
-        private int _firstNumber;
+        private int firstNumber;
 
         public PrimeSequence()
         {
-            _firstNumber = 2;
+            this.firstNumber = 2;
         }
 
         public string DisplayPrimeSequence(int number)
@@ -202,12 +202,12 @@ namespace TDDlearning
 
             while (number > 0)
             {
-                if (CheckingNumber(_firstNumber))
+                if (CheckingNumber(firstNumber))
                 {
-                    result += _firstNumber.ToString();
+                    result += firstNumber.ToString();
                     number--;
                 }
-                _firstNumber++;
+                firstNumber++;
             }
             return result;
         }
